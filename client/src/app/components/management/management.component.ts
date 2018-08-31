@@ -88,8 +88,8 @@ export class ManagementComponent implements OnInit {
       text: "No podrá deshacer los cambios una vez hecho esto.",
       type: 'warning',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#1F9BCF',
+      cancelButtonColor: '#d9534f',
       confirmButtonText: 'Si, Borrar definitivamente'
     }).then((result) => {
       if (result.value) {
