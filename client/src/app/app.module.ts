@@ -7,6 +7,8 @@ import { ManagementComponent } from './components/management/management.componen
 import {FormsModule} from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NavegationComponent } from './components/navegation/navegation.component';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { NavegationComponent } from './components/navegation/navegation.componen
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    SweetAlert2Module.forRoot()
 
   
   ],

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ManagementService } from 'src/app/services/management.service';
 import { NgForm } from '@angular/forms';
 import { Management } from '../../models/management';
+import swal from 'sweetalert2';
+
 
 
 @Component({
@@ -75,23 +77,29 @@ export class ManagementComponent implements OnInit {
   }
 
 
-
-  deleteManagement(idManagement: number) {
-    if (confirm('¿Está seguro que desea eliminar la gerencia?')) {
-      
-      this.managementService.deleteManagement(idManagement).
-        subscribe(data => {
-          this.getMessage(data)
-          this.getManagements()
-        })
-     
-    }
-   
+  editManagement(management: Management) {
+    this.managementService.selectedManagement = management
   }
 
 
-  editManagement(management: Management) {
-    this.managementService.selectedManagement = management
+  deleteManagement(idManagement: number) {
+    swal({
+      title: '¿ Está seguro(a) ?',
+      text: "No podrá deshacer los cambios una vez hecho esto.",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Borrar definitivamente'
+    }).then((result) => {
+      if (result.value) {
+        this.managementService.deleteManagement(idManagement).
+          subscribe(data => {
+            this.getMessage(data)
+            this.getManagements()
+          })
+      }
+    })
 
 
   }
