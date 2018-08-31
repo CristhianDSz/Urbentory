@@ -1,25 +1,23 @@
 const http = require('http')
 const express = require('express')
 const myConnection = require('./database/connection')
+const cors = require('cors')
 
 const app = express()
 
-const employeesRoutes = require('./routes/employees')
-const managementRoutes = require('./routes/management')
+const router = require('./routes/routes')
 
 //Settings
 app.set('port', process.env.PORT || 3000)
 
 
-
-
 //Middlewares
 app.use(express.json())
+app.use(cors({origin:'http://localhost:4200'}))
 app.use(express.urlencoded({extended: false}))
 app.use(myConnection)
 //Routes
-app.use('/employees', employeesRoutes)
-app.use('/management', managementRoutes)
+app.use('/urbentory', router)
 
 
 //Server
