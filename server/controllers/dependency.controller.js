@@ -5,7 +5,7 @@ dependencyController.list = (req, res) => {
     if (err) return console.log(`Error Al consultar datos de la BD: ${err}`)
 
 
-    conn.query('SELECT d.idDependency,d.description as depDescription, m.description as depManagement FROM dependency as d JOIN management as m ON m.IdManagement = d.management_IdManagement'
+    conn.query('SELECT d.idDependency,d.description as depDescription, m.description as depManagement FROM dependency as d JOIN management as m ON m.IdManagement = d.management_IdManagement ORDER BY depDescription ASC'
     , (err, results) => {
         if (err) return console.log(`Error al consultar la tabla de dependencias: ${err}`)
 

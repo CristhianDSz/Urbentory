@@ -90,7 +90,7 @@ export class ManagementComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#1F9BCF',
       cancelButtonColor: '#d9534f',
-      confirmButtonText: 'Si, Borrar definitivamente'
+      confirmButtonText: 'Borrar definitivamente'
     }).then((result) => {
       if (result.value) {
         this.managementService.deleteManagement(idManagement).

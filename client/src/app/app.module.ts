@@ -8,6 +8,10 @@ import {FormsModule} from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NavegationComponent } from './components/navegation/navegation.component';
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
+import { DependencyComponent } from './components/dependency/dependency.component';
+
+/* routes */
+import { routingModule } from './app.routing'
 
 
 @NgModule({
@@ -15,6 +19,7 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
     AppComponent,
     ManagementComponent,
     NavegationComponent,
+    DependencyComponent,
    
   ],
   imports: [
@@ -22,7 +27,8 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
     HttpClientModule,
     FormsModule,
     NgxPaginationModule,
-    SweetAlert2Module.forRoot()
+    SweetAlert2Module.forRoot(),
+    routingModule
 
   
   ],
