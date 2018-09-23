@@ -18,6 +18,9 @@ router.delete('/management/:id', managementController.delete)
 
 /* Dependencies */
 router.get('/dependency',dependencyController.list)
+router.post('/dependency',dependencyController.add)
+router.put('/dependency/:id',dependencyController.edit)
+router.delete('/dependency',dependencyController.delete)
 
 
 module.exports = router
