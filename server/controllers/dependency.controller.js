@@ -30,7 +30,7 @@ dependencyController.add = (req, res) => {
 
 dependencyController.edit = (req, res) => {
   req.getConnection((err, conn) => {
-    if (err) return console.log(`Error Al consultar datos de la BD: ${err}`)
+    if (err) return console.log(`Error Al consultar datos de la Base de Datos: ${err}`)
     const dependency = req.body
     const id = req.body.idDependency
     conn.query('UPDATE dependency SET ? WHERE idDependency = ? ', [dependency, id], (err, results) => {
